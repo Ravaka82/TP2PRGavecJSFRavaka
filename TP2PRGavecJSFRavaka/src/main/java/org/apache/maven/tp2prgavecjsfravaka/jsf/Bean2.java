@@ -11,21 +11,10 @@ import jakarta.servlet.http.HttpServletRequest;
 @RequestScoped
 public class Bean2 {
 
-    private int nombre;
+   private int nombre;
 
     public int getNombre() {
-        FacesContext facesContext = FacesContext.getCurrentInstance();
-        HttpServletRequest request = (HttpServletRequest) facesContext.getExternalContext().getRequest();
-        String nbParam = request.getParameter("nb");
-
-        if (nbParam != null && !nbParam.isEmpty()) {
-            try {
-                return Integer.parseInt(nbParam);
-            } catch (NumberFormatException e) {
-                e.printStackTrace();
-            }
-        }
-        return 0;
+        return nombre;
     }
 
     public void setNombre(int nombre) {
@@ -42,6 +31,6 @@ public class Bean2 {
     }
 
     public String afficher() {
-        return "affichage_4.xhtml?nb=" + nombre + "&faces-redirect=true";
+        return "affichage_4?nb=" + nombre + "&amp;faces-redirect=true";
     }
 }

@@ -6,21 +6,23 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 
     <f:metadata>
-        <f:viewParam name="nb" value="#{bean2.nombre}"/>
+        <f:viewParam name="nb" value="#{bean2.nombre}"/> 
     </f:metadata>
 
     <h:head>
-        <title>Application&gt;affichage_4</title>
+        <title>Applicationaffichage_4</title>
     </h:head>
     <h:body>
 
         <h1>Application&gt;affichage_4</h1>
 
         Les nombres : <br/>
-        <ui:repeat value="#{bean2.nombresSuivants}" var="n" varStatus="status">
+        <ui:repeat value="#{bean2.nombresSuivants}" var="n" varStatus="status"> 
             #{n + 1}#{! status.last ? ', ' : ''}
         </ui:repeat>
         <p/>
-        <h:link outcome="formulaire_4.xhtml?nb=#{bean2.nombre}" value="Saisir un autre nombre"/>
+        <h:link outcome="formulaire_4" value="Saisir un autre nombre"> 
+            <f:param name="nb" value="#{bean2.nombre}"/>
+        </h:link>
     </h:body>     
 </html>
