@@ -4,7 +4,6 @@
  */
 package org.apache.maven.tp2prgavecjsfravaka.jsf;
 
-
 import java.util.ArrayList;
 import java.util.List;
 import jakarta.inject.Named;
@@ -31,5 +30,9 @@ public class Bean {
             l.add(i);
         }
         return l;
+    }
+
+    public String afficher() {
+        return "affichage_3?nb=" + nombre + "&amp;faces-redirect=true";
     }
 }
