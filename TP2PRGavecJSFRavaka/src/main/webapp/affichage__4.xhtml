@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="jakarta.faces.html"
+      xmlns:f="jakarta.faces.core">
+
+    <body>
+
+        <ui:composition template="./WEB-INF/templates/template_defaut.xhtml">
+
+            <ui:define name="metadata">
+                <f:metadata>
+                    <f:viewParam name="nb" value="#{bean3.nombre}"/> 
+                </f:metadata>
+            </ui:define>
+
+            <ui:param name="titre" value="Exercice 4"/>
+
+            <ui:define name="content">
+
+                <h1>Application&gt;affichage__4</h1>
+
+                Les nombres : <br/>
+                <ui:repeat value="#{bean3.nombresSuivants}" var="n" varStatus="status"> 
+                    #{n + 1}#{! status.last ? ', ' : ''}
+                </ui:repeat>
+                <p/>
+                <h:link outcome="formulaire__4" value="Saisir un autre nombre"> 
+                    <f:param name="nb" value="#{bean3.nombre}"/>
+                </h:link>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>
