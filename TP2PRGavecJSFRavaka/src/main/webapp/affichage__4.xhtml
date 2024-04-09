@@ -20,7 +20,7 @@
             <ui:define name="content">
 
                 <h1>Application&gt;affichage__4</h1>
-
+                
                 Les nombres : <br/>
                 <ui:repeat value="#{bean3.nombresSuivants}" var="n" varStatus="status"> 
                     #{n + 1}#{! status.last ? ', ' : ''}
